@@ -19,8 +19,8 @@ App must include:
     [X] script.js
     [X] style.css
     [X] link all to html
-[ ] HTML Mockup
-[ ] Form setup - employee name, number, title, salary
+[X] HTML Mockup
+[X] Form setup - employee name, number, title, salary
 [ ] Submit button
     [ ] HTML setup
     [ ] jQuery event handler

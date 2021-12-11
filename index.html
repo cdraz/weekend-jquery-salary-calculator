@@ -10,6 +10,69 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Salary Calculator</h1>
+    <header>
+        <h1>
+            Salary Calculator
+        </h1>
+    </header>
+    <main>
+        <h2>
+            Add Employee
+        </h2>
+        <form>
+            <input 
+                id="firstNameInput"
+                type="text"
+                placeholder="First Name"
+            />
+            <input
+                id="lastNameInput"
+                type="text"
+                placeholder="Last Name"
+            />
+            <input
+                id="IdInput"
+                type="text"
+                placeholder="ID"
+            />
+            <input
+                id="salaryInput"
+                type="text"
+                placeholder="Annual Salary"
+            />
+            <input
+                type="submit"
+                value="Add Employee"
+            >
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable">
+                <tr>
+                    <td>Christopher</td>
+                    <td>Razidlo</td>
+                    <td>4059</td>
+                    <td>Software Engineer</td>
+                    <td>$1,000,000</td>
+                    <td><button class="deleteBtn">Delete</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr></tr>
+            </tfoot>
+        </table>
+        <h2>
+            Total Monthly: <span id="totalMonthly">0</span>
+        </h2>
+    </main>
 </body>
 </html>
