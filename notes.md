@@ -21,13 +21,21 @@ App must include:
     [X] link all to html
 [X] HTML Mockup
 [X] Form setup - employee name, number, title, salary
-[ ] Submit button
-    [ ] HTML setup
-    [ ] jQuery event handler
-    [ ] Clear form fields and stores values to global variable
-    [ ] appends new info to DOM
+[X] Submit button
+    [X] HTML setup
+    [X] jQuery event handler
+    [X] Clear form fields and stores values to global variable
+    [X] appends new info to DOM
 [ ] Delete button
     [ ] jQuery event handler
     [ ] Removes item from DOM
     [ ] Removes employee info from global variable
 [ ] Styling
+
+$('#formID').on('submit', onFormSubmission);
+
+function onFormSubmission(event) {
+    event.preventDefault();
+}
+
+LOOK INTO HTML5 VALIDATION - for forms

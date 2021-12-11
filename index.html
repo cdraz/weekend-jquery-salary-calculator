@@ -24,23 +24,34 @@
                 id="firstNameInput"
                 type="text"
                 placeholder="First Name"
-            />
+                required
+            >
             <input
                 id="lastNameInput"
                 type="text"
                 placeholder="Last Name"
-            />
+                required
+            >
             <input
-                id="IdInput"
+                id="idInput"
                 type="text"
                 placeholder="ID"
-            />
+                required
+            >
+            <input
+                id="titleInput"
+                type="text"
+                placeholder="Title"
+                required
+            >
             <input
                 id="salaryInput"
-                type="text"
+                type="number"
                 placeholder="Annual Salary"
-            />
+                required
+            >
             <input
+                id="submitBtn"
                 type="submit"
                 value="Add Employee"
             >
@@ -57,14 +68,6 @@
                 </tr>
             </thead>
             <tbody id="employeeTable">
-                <tr>
-                    <td>Christopher</td>
-                    <td>Razidlo</td>
-                    <td>4059</td>
-                    <td>Software Engineer</td>
-                    <td>$1,000,000</td>
-                    <td><button class="deleteBtn">Delete</button></td>
-                </tr>
             </tbody>
             <tfoot>
                 <tr></tr>
