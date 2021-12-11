@@ -1,8 +1,9 @@
 console.log('js ready');
 $(document).ready(onReady);
 
-// Declare global employees array
+// Declare global employees array and global monthly cost variable
 let employees = [];
+let monthlyCost = 0;
 
 // Declare onReady
 function onReady() {
@@ -48,7 +49,9 @@ function onSubmit(event) {
     // Clear #employeeTable to prepare for rendering
     $('#employeeTable').empty();
 
-    // Loop through employees array and render to DOM
+    // Loop through employees array and render to DOM the employee and update monthly total
+
+    monthlyCost = 0 // Set monthly cost to zero to prepare for recalculation
     for ( let employee of employees ) {
         $('#employeeTable').append(`
         <tr>
@@ -62,11 +65,36 @@ function onSubmit(event) {
             </td>
         </tr>
         `);
+        monthlyCost += employee.annualSalary/12;
+    }
+
+    // Updated DOM with recalculated monthlyCost
+    $('#totalMonthly').html(monthlyCost);
+
+    // Check monthlyCost to determine background color (Red if > $20k, white if < $20k)
+    if ( monthlyCost > 20000 ) {
+        $('#totalMonthly').css({
+            'background-color': '#FF7777',
+            'color': '#550000'
+        })
+    }
+    else {
+        $('#totalMonthly').css({
+            'background-color': '#FFFFFF',
+            'color': '#000000'
+        })
     }
 
 } // end onSubmit
 
 // Declare onDelete
 function onDelete() {
-    console.log('onDelete');
-}
+    console.log('in onDelete');
+    
+    // Remove employee from DOM
+    $(this).parents('tr').remove();
+
+    // Remove employee from global employees array
+
+
+} // end onDelete
