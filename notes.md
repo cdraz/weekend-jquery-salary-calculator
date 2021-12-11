@@ -26,11 +26,16 @@ App must include:
     [X] jQuery event handler
     [X] Clear form fields and stores values to global variable
     [X] appends new info to DOM
-[ ] Delete button
-    [ ] jQuery event handler
-    [ ] Removes item from DOM
+[X] Delete button
+    [X] jQuery event handler
+    [X] Removes item from DOM
     [ ] Removes employee info from global variable
 [ ] Styling
+
+
+TO DO LATER:
+[ ] Fix rounding for salary and monthly cost
+
 
 $('#formID').on('submit', onFormSubmission);
 

@@ -12,7 +12,6 @@ function onReady() {
     $(document).on('click', '.deleteBtn', onDelete );
 } // end onReady
 
-
 // Declare onSubmit
 function onSubmit(event) {
     event.preventDefault();
@@ -57,19 +56,19 @@ function onSubmit(event) {
         <tr>
             <td>${employee.firstName}</td>
             <td>${employee.lastName}</td> 
-            <td>${employee.id}</td>
+            <td class="employee-id">${employee.id}</td>
             <td>${employee.title}</td>
-            <td>${employee.annualSalary}</td>
+            <td>$${employee.annualSalary}</td>
             <td>
                 <button class="deleteBtn">Delete</button>
             </td>
         </tr>
         `);
-        monthlyCost += employee.annualSalary/12;
+        monthlyCost += employee.annualSalary / 12;
     }
 
     // Updated DOM with recalculated monthlyCost
-    $('#totalMonthly').html(monthlyCost);
+    $('#totalMonthly').html(`$${monthlyCost.toLocaleString('en-US')}`);
 
     // Check monthlyCost to determine background color (Red if > $20k, white if < $20k)
     if ( monthlyCost > 20000 ) {
@@ -94,7 +93,17 @@ function onDelete() {
     // Remove employee from DOM
     $(this).parents('tr').remove();
 
-    // Remove employee from global employees array
+    // Get employee ID with jQuery .text()
+    let idToDelete = $(this).parent().siblings('td.employee-id').text();
+    console.log('ID Found that will be deleted: ', idToDelete);
 
+    // Using found ID, loop through array and delete employee with matching ID
+    for (let employee of employees) {
+        if (employee.id === idToDelete) {
+            console.log('Employee being deleted: ', employee);
+            let i = employees.indexOf(employee);
+            employees.splice(i, 1);
+        }
+    }
 
 } // end onDelete

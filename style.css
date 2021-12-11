@@ -1,3 +1,25 @@
-h1 {
-    color: red;
+header {
+    padding: 30px 30px 15px 30px;
+    text-align: center;
+    background-color: #53b853;
+    color: #ffffff;
+}
+
+main {
+    margin: 10px 30px;
+}
+h3 {
+    margin: 30px 15px 15px 15px;
+}
+
+#employee-form {
+    margin-bottom: 50px;
+}
+
+#employee-table {
+    margin-bottom: 50px;
+}
+
+#monthly-total {
+    text-align: right;
 }

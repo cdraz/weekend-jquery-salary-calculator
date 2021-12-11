@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salary Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
     <script src="script.js"></script>
@@ -16,47 +17,47 @@
         </h1>
     </header>
     <main>
-        <h2>
+        <h3>
             Add Employee
-        </h2>
-        <form>
+        </h3>
+        <form id="employee-form">
             <input 
                 id="firstNameInput"
                 type="text"
                 placeholder="First Name"
                 required
-            >
+            />
             <input
                 id="lastNameInput"
                 type="text"
                 placeholder="Last Name"
                 required
-            >
+            />
             <input
                 id="idInput"
                 type="text"
                 placeholder="ID"
                 required
-            >
+            />
             <input
                 id="titleInput"
                 type="text"
                 placeholder="Title"
                 required
-            >
+            />
             <input
                 id="salaryInput"
                 type="number"
                 placeholder="Annual Salary"
                 required
-            >
+            />
             <input
                 id="submitBtn"
                 type="submit"
-                value="Add Employee"
-            >
+                value="Submit"
+            />
         </form>
-        <table>
+        <table class="table table-striped employee-table">
             <thead>
                 <tr>
                     <th>First Name</th>
@@ -73,9 +74,9 @@
                 <tr></tr>
             </tfoot>
         </table>
-        <h2>
-            Total Monthly: <span id="totalMonthly">0</span>
-        </h2>
+        <h3 id="monthly-total">
+            Total Monthly: <span id="totalMonthly">$0.00</span>
+        </h3>
     </main>
 </body>
 </html>
