@@ -8,36 +8,14 @@ let monthlyCost = 0;
 // Declare onReady
 function onReady() {
     console.log('jquery ready');
-    $(document).on('click', '#submitBtn', onSubmit );
+    $(document).on('submit', '#employee-form', onSubmit );
     $(document).on('click', '.deleteBtn', onDelete );
 } // end onReady
 
 // Declare onSubmit
 function onSubmit(event) {
     event.preventDefault();
-
-    // Check for empty inputs, stop function and alert if any are empty
-    if ($('#firstNameInput').val() === '') {
-        alert('Please include employee\'s first name.');
-        return;
-    }
-    if ($('#lastNameInput').val() === '') {
-        alert('Please include employee\'s last name.');
-        return;
-    }
-    if ($('#idInput').val() === '') {
-        alert('Please include employee\'s ID.');
-        return;
-    }
-    if ($('#titleInput').val() === '') {
-        alert('Please include employee\'s title.');
-        return;
-    }
-    if ($('#salaryInput').val() === '') {
-        alert('Please include employee\'s annual salary.');
-        return;
-    }
-
+    
     // Log to console if add is successful
     console.log('Employee added');
 
@@ -91,7 +69,7 @@ function domRefresh() {
             <td>${employee.lastName}</td> 
             <td class="employee-id">${employee.id}</td>
             <td>${employee.title}</td>
-            <td>$${employee.annualSalary}</td>
+            <td>$${employee.annualSalary.toLocaleString('en-US')}</td>
             <td>
                 <button class="deleteBtn">Delete</button>
             </td>
@@ -101,7 +79,7 @@ function domRefresh() {
     }
 
     // Updated DOM with recalculated monthlyCost
-    $('#totalMonthly').html(`$${monthlyCost.toFixed(2)}`);
+    $('#totalMonthly').html(`$${Number(monthlyCost.toFixed(2)).toLocaleString('en-US')}`);
 
     // Check monthlyCost to determine background color (Red if > $20k, white if < $20k)
     if ( monthlyCost > 20000 ) {

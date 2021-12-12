@@ -34,7 +34,7 @@ App must include:
 
 
 TO DO LATER:
-[ ] Fix rounding for salary and monthly cost
+[X] Fix rounding for monthly cost
 
 
 $('#formID').on('submit', onFormSubmission);
