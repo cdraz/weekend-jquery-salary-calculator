@@ -77,7 +77,7 @@ function domRefresh() {
     }
 
     // Updated DOM with recalculated monthlyCost
-    $('#totalMonthly').html(`$${monthlyCost.toLocaleString('en-US')}`);
+    $('#totalMonthly').html(`$${monthlyCost.toFixed(2)}`);
 
     // Check monthlyCost to determine background color (Red if > $20k, white if < $20k)
     if ( monthlyCost > 20000 ) {

@@ -29,8 +29,8 @@ App must include:
 [X] Delete button
     [X] jQuery event handler
     [X] Removes item from DOM
-    [ ] Removes employee info from global variable
-[ ] Styling
+    [X] Removes employee info from global variable
+[X] Styling
 
 
 TO DO LATER:
