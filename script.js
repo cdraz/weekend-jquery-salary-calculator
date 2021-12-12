@@ -45,12 +45,21 @@ function onSubmit(event) {
     employees.push(newEmployee);
     console.log( 'Employee list: ', employees );
 
+    // Refresh DOM with updated data
+    domRefresh();
+
+} // end onSubmit
+
+// Declare domRefresh
+function domRefresh() {
+
     // Clear #employeeTable to prepare for rendering
     $('#employeeTable').empty();
 
-    // Loop through employees array and render to DOM the employee and update monthly total
+    // Set monthly cost to zero to prepare for recalculation
+    monthlyCost = 0
 
-    monthlyCost = 0 // Set monthly cost to zero to prepare for recalculation
+    // Loop through employees array and render to DOM the employee and update monthly total
     for ( let employee of employees ) {
         $('#employeeTable').append(`
         <tr>
@@ -83,16 +92,12 @@ function onSubmit(event) {
             'color': '#000000'
         })
     }
-
-} // end onSubmit
+} // end domRefresh
 
 // Declare onDelete
 function onDelete() {
     console.log('in onDelete');
     
-    // Remove employee from DOM
-    $(this).parents('tr').remove();
-
     // Get employee ID with jQuery .text()
     let idToDelete = $(this).parent().siblings('td.employee-id').text();
     console.log('ID Found that will be deleted: ', idToDelete);
@@ -105,5 +110,7 @@ function onDelete() {
             employees.splice(i, 1);
         }
     }
+    // Refresh DOM to reflect deleted employee
+    domRefresh();
 
 } // end onDelete
