@@ -15,6 +15,30 @@ function onReady() {
 // Declare onSubmit
 function onSubmit(event) {
     event.preventDefault();
+
+    // Check for empty inputs, stop function and alert if any are empty
+    if ($('#firstNameInput').val() === '') {
+        alert('Please include employee\'s first name.');
+        return;
+    }
+    if ($('#lastNameInput').val() === '') {
+        alert('Please include employee\'s last name.');
+        return;
+    }
+    if ($('#idInput').val() === '') {
+        alert('Please include employee\'s ID.');
+        return;
+    }
+    if ($('#titleInput').val() === '') {
+        alert('Please include employee\'s title.');
+        return;
+    }
+    if ($('#salaryInput').val() === '') {
+        alert('Please include employee\'s annual salary.');
+        return;
+    }
+
+    // Log to console if add is successful
     console.log('Employee added');
 
     // Pull info from inputs and store data for use
